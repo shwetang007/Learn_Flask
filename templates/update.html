@@ -1,16 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}  <!-- Inherits the layout from base.html for consistent styling -->
 
 {% block head %}
-<title>Task Master</title>
+<title>Task Master</title>  <!-- Sets the page title for the update task page -->
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Update Task</h1>
+    <h1 style="text-align: center">Update Task</h1>  <!-- Center-aligned heading for user clarity -->
 
     <div class="form">
+        <!-- Form for submitting updates to the task. Action points to the update route with the specific task ID -->
         <form action="/update/{{task.id}}" method="POST">
-            <input type="text" name="content" id="content" value="{{task.content}}">
+            <!-- Input field pre-filled with the current task content, allowing the user to make modifications -->
+            <input type="text" name="content" id="content" value="{{task.content}}" required>
+            <!-- Submit button to send the updated content to the server -->
             <input type="submit" value="Update">
         </form>
     </div>
