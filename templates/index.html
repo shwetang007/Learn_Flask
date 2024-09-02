@@ -1,39 +1,46 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}  <!-- Inherits layout from base.html to maintain consistent styling and structure -->
 
 {% block head %}
-<title>Task Master</title>
+<title>Task Master</title>  <!-- Sets the title of the page to "Task Master" -->
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Task Master</h1>
+    <h1 style="text-align: center">Task Master</h1>  <!-- Center-aligned heading for the main content area -->
+
     {% if tasks|length < 1 %}
-    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    <!-- Check if there are no tasks to display -->
+    <h4 style="text-align: center">There are no tasks. Create one below!</h4>  <!-- Message shown when no tasks are available -->
     {% else %}
+    <!-- Table to display tasks when they exist -->
     <table>
         <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
+            <th>Task</th>  <!-- Column header for task content -->
+            <th>Added</th>  <!-- Column header for task creation date -->
+            <th>Actions</th>  <!-- Column header for action links -->
         </tr>
         {% for task in tasks %}
+            <!-- Loop through each task and display its details -->
             <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.date_created.date() }}</td>
+                <td>{{ task.content }}</td>  <!-- Display task content -->
+                <td>{{ task.date_created.date() }}</td>  <!-- Display task creation date (formatted to show only the date) -->
                 <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
+                    <!-- Links for task actions: delete and update -->
+                    <a href="/delete/{{task.id}}">Delete</a>  <!-- Link to delete the task -->
                     <br>
-                    <a href="/update/{{task.id}}">Update</a>
+                    <a href="/update/{{task.id}}">Update</a>  <!-- Link to update the task -->
                 </td>
             </tr>
         {% endfor %}
     </table>
     {% endif %}
 
+    <!-- Form to add a new task -->
     <div class="form">
         <form action="/" method="POST">
-            <input type="text" name="content" id="content">
-            <input type="submit" value="Add Task">
+            <!-- Input field for entering new task content -->
+            <input type="text" name="content" id="content" required>  <!-- Added 'required' attribute for form validation -->
+            <input type="submit" value="Add Task">  <!-- Submit button to add the task -->
         </form>
     </div>
 </div>
