@@ -1,36 +1,43 @@
+/* Basic reset and styling for the entire document */
 body, html {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: lightblue;
+    margin: 0;  /* Remove default margins to ensure consistent spacing */
+    font-family: sans-serif;  /* Apply a clean, sans-serif font for readability */
+    background-color: lightblue;  /* Set a light blue background color for a calm visual effect */
 }
 
+/* Centering and sizing the main content container */
 .content {
-    margin: 0 auto;
-    width: 400px;
+    margin: 0 auto;  /* Center the container horizontally */
+    width: 400px;  /* Set a fixed width for the content area */
 }
 
+/* Styling for table elements */
 table, td, th {
-    border: 1px solid #aaa;
+    border: 1px solid #aaa;  /* Apply a light gray border to table elements for clarity */
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+    border-collapse: collapse;  /* Collapse borders to avoid double borders */
+    width: 100%;  /* Make the table width span the full width of its container */
 }
 
+/* Header row styling */
 th {
-    height: 30px;
+    height: 30px;  /* Set a fixed height for table headers for uniformity */
 }
 
+/* Cell styling */
 td {
-    text-align: center;
-    padding: 5px;
+    text-align: center;  /* Center-align text within table cells */
+    padding: 5px;  /* Add padding for better spacing and readability */
 }
 
+/* Styling for the task input form */
 .form {
-    margin-top: 20px;
+    margin-top: 20px;  /* Add space above the form to separate it from other content */
 }
 
+/* Styling for the task input field */
 #content {
-    width: 70%;
+    width: 70%;  /* Set the width of the input field to be 70% of its container */
 }
